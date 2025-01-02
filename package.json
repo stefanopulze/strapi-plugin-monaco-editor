@@ -1,0 +1,89 @@
+{
+  "name": "strapi-plugin-monaco-editor",
+  "version": "1.0.0",
+  "description": "Monaco editor as strapi custom field",
+  "license": "MIT",
+  "author": "Stefano <stefano.pulze87@gmail.com>",
+  "type": "commonjs",
+  "scripts": {
+    "build": "strapi-plugin build",
+    "watch": "strapi-plugin watch",
+    "watch:link": "strapi-plugin watch:link",
+    "verify": "strapi-plugin verify",
+    "test:ts:front": "run -T tsc -p admin/tsconfig.json",
+    "test:ts:back": "run -T tsc -p server/tsconfig.json"
+  },
+  "exports": {
+    "./package.json": "./package.json",
+    "./strapi-admin": {
+      "types": "./dist/admin/src/index.d.ts",
+      "source": "./admin/src/index.ts",
+      "import": "./dist/admin/index.mjs",
+      "require": "./dist/admin/index.js",
+      "default": "./dist/admin/index.js"
+    },
+    "./strapi-server": {
+      "types": "./dist/server/src/index.d.ts",
+      "source": "./server/src/index.ts",
+      "import": "./dist/server/index.mjs",
+      "require": "./dist/server/index.js",
+      "default": "./dist/server/index.js"
+    }
+  },
+  "files": [
+    "dist/",
+    "package.json",
+    "README.md"
+  ],
+  "dependencies": {
+    "@strapi/icons": "^2.0.0-rc.14",
+    "lodash": "^4.17.21",
+    "react-intl": "^7.0.4",
+    "monaco-editor": "0.52.2"
+  },
+  "devDependencies": {
+    "@strapi/design-system": "^2.0.0-rc.14",
+    "@strapi/strapi": "^5.6.0",
+    "@strapi/sdk-plugin": "^5.2.8",
+    "prettier": "^3.4.2",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-router-dom": "^7.1.1",
+    "styled-components": "^6.1.13",
+    "@types/react": "^19.0.2",
+    "@types/react-dom": "^19.0.2",
+    "@strapi/typescript-utils": "^5.6.0",
+    "typescript": "^5.7.2"
+  },
+  "peerDependencies": {
+    "@strapi/strapi": "^5.6.0",
+    "@strapi/sdk-plugin": "^5.2.8",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "styled-components": "^6.1.13"
+  },
+  "strapi": {
+    "kind": "plugin",
+    "name": "monaco",
+    "displayName": "Monaco Editor",
+    "description": "Monaco editor as custom field"
+  },
+  "homepage": "https://github.com/stefanopulze/strapi-plugin-monaco-editor#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/stefanopulze/strapi-plugin-monaco-editor"
+  },
+  "maintainers": [
+    {
+      "name": "Stefano Pulze",
+      "email": "stefano.pulze87@gmail.com",
+      "url": "https://stefanopulze.com"
+    }
+  ],
+  "keywords": [
+    "strapi",
+    "monaco",
+    "editor",
+    "field"
+  ]
+}

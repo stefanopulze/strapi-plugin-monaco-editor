@@ -1,0 +1,9 @@
+{
+  "monaco.field.label": "Monaco Editor",
+  "monaco.field.description": "Code with style",
+  "monaco.field.language": "Language",
+  "monaco.field.minimap.label": "Minimap",
+  "monaco.field.minimap.description": "Show minimap when edit",
+  "monaco.field.minimap.required.label": "Required field",
+  "monaco.field.minimap.required.description": "You won't be able to create an entry if this field is empty"
+}

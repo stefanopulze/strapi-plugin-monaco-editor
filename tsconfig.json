@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "outDir": "dist",
+    "rootDir": ".",
+    "target": "ES6",
+  },
+  "include": [
+    "admin/**/*.ts",
+    "admin/**/*.tsx",
+    "admin/**/*.json",
+    "package.json",
+    "server/**/*.ts",
+  ],
+  "exclude": [
+    "node_modules/",
+    "dist/",
+    "**/*.test.ts"
+  ]
+}
