@@ -65,7 +65,7 @@
   },
   "strapi": {
     "kind": "plugin",
-    "name": "monaco",
+    "name": "monaco-editor",
     "displayName": "Monaco Editor",
     "description": "Monaco editor as custom field"
   },
