@@ -8,9 +8,9 @@ const register = ({ strapi }: { strapi: Core.Strapi }) => {
     type: 'text',
     inputSize: {
       default: 12,
-      isResizable: false
-    }
-  })
+      isResizable: false,
+    },
+  });
 };
 
 export default register;

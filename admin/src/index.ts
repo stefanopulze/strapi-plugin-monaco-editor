@@ -9,7 +9,7 @@ export default {
   register(app: any) {
     app.customFields.register({
       name: 'monaco-editor-text',
-      pluginId: PLUGIN_ID,
+      plugin: PLUGIN_ID,
       type: 'text',
       // icon: Code,
       intlLabel: {

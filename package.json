@@ -1,6 +1,6 @@
 {
   "name": "strapi-plugin-monaco-editor",
-  "version": "1.0.0",
+  "version": "1.0.0-rc3",
   "description": "Monaco editor as strapi custom field",
   "license": "MIT",
   "author": "Stefano <stefano.pulze87@gmail.com>",
@@ -38,8 +38,9 @@
   "dependencies": {
     "@strapi/icons": "^2.0.0-rc.14",
     "lodash": "^4.17.21",
+    "monaco-editor": "0.52.2",
     "react-intl": "^7.0.4",
-    "monaco-editor": "0.52.2"
+    "yup": "^1.6.1"
   },
   "devDependencies": {
     "@strapi/design-system": "^2.0.0-rc.14",

@@ -5,5 +5,11 @@
   "monaco.field.minimap.label": "Minimap",
   "monaco.field.minimap.description": "Show minimap when edit",
   "monaco.field.minimap.required.label": "Required field",
-  "monaco.field.minimap.required.description": "You won't be able to create an entry if this field is empty"
+  "monaco.field.minimap.required.description": "You won't be able to create an entry if this field is empty",
+  "monaco.field.lineNumbers.label": "Line numbers",
+  "monaco.field.lineNumbers.description": "Show line numbers",
+  "monaco.field.folding.label": "Folding",
+  "monaco.field.folding.description": "Enable code folding",
+  "monaco.field.height.label": "Height",
+  "monaco.field.height.description": "Height of the editor in pixels"
 }

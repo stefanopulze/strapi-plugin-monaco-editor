@@ -1,34 +1,34 @@
+import * as monaco from 'monaco-editor';
+// @ts-ignore
+import jsonWorker from 'monaco-editor/esm/vs/language/json/json.worker?worker';
+// @ts-ignore
+import cssWorker from 'monaco-editor/esm/vs/language/css/css.worker?worker';
+// @ts-ignore
+import htmlWorker from 'monaco-editor/esm/vs/language/html/html.worker?worker';
+// @ts-ignore
+import jsWorker from 'monaco-editor/esm/vs/language/typescript/ts.worker?worker';
+// @ts-ignore
+import editorWorker from 'monaco-editor/esm/vs/editor/editor.worker?worker';
+
 const initWorkers = () => {
   self.MonacoEnvironment = {
     getWorker: function (workerId, label) {
-      console.log('gettingWorker', workerId, label);
-      const getWorkerModule = (moduleUrl: any, label: any) => {
-        // @ts-ignore
-        return new Worker(self.MonacoEnvironment.getWorkerUrl(moduleUrl), {
-          name: label,
-          type: 'module',
-        });
-      };
-
       switch (label) {
         case 'json':
-          return getWorkerModule('/monaco-editor/esm/vs/language/json/json.worker?worker', label);
+          return jsonWorker();
         case 'css':
         case 'scss':
         case 'less':
-          return getWorkerModule('/monaco-editor/esm/vs/language/css/css.worker?worker', label);
+          return cssWorker();
         case 'html':
         case 'handlebars':
         case 'razor':
-          return getWorkerModule('/monaco-editor/esm/vs/language/html/html.worker?worker', label);
+          return htmlWorker();
         case 'typescript':
         case 'javascript':
-          return getWorkerModule(
-            '/monaco-editor/esm/vs/language/typescript/ts.worker?worker',
-            label
-          );
+          return jsWorker();
         default:
-          return getWorkerModule('/monaco-editor/esm/vs/editor/editor.worker?worker', label);
+          return editorWorker();
       }
     },
   };
