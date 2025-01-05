@@ -1,4 +1,3 @@
-import * as monaco from 'monaco-editor';
 // @ts-ignore
 import jsonWorker from 'monaco-editor/esm/vs/language/json/json.worker?worker';
 // @ts-ignore

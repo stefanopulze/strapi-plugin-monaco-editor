@@ -1,4 +1,4 @@
-import { number } from 'yup';
+// import { number } from 'yup';
 
 export default {
   base: [
@@ -110,16 +110,16 @@ export default {
       defaultValue: 300,
     },
   ],
-  validator: () => ({
-    height: number()
-      .required()
-      .min(200, {
-        id: 'monaco.field.height.minValidation',
-        defaultMessage: 'Height is too short! Minimum is 200',
-      })
-      .max(500, {
-        id: 'monaco.field.height.maxValidation',
-        defaultMessage: 'Height is too large! Maximum is 500',
-      }),
-  }),
+  // validator: () => ({
+  //   height: number()
+  //     .required()
+  //     .min(200, {
+  //       id: 'monaco.field.height.minValidation',
+  //       defaultMessage: 'Height is too short! Minimum is 200',
+  //     })
+  //     .max(500, {
+  //       id: 'monaco.field.height.maxValidation',
+  //       defaultMessage: 'Height is too large! Maximum is 500',
+  //     }),
+  // }),
 };

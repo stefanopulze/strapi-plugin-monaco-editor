@@ -1,10 +1,9 @@
 import { useEffect } from 'react';
 import { type FieldValue, type InputProps } from '@strapi/strapi/admin';
-import * as monaco from 'monaco-editor';
-import initWorkers from '../editor/workers';
+import { editor } from 'monaco-editor';
 import { debounce } from 'lodash';
 import { Box, Field } from '@strapi/design-system';
-import IStandaloneEditorConstructionOptions = monaco.editor.IStandaloneEditorConstructionOptions;
+// import IStandaloneEditorConstructionOptions = monaco.editor.IStandaloneEditorConstructionOptions;
 
 type MonacoFieldProps = InputProps &
   FieldValue & {
@@ -20,8 +19,6 @@ type MonacoFieldProps = InputProps &
     };
   };
 
-initWorkers();
-
 const MonacoField = (props: MonacoFieldProps) => {
   const { disabled, name, onChange, value, attribute } = props;
   const fieldId = `monaco-field-${name}`;
@@ -30,7 +27,7 @@ const MonacoField = (props: MonacoFieldProps) => {
 
   useEffect(() => {
     const element = document.querySelector(`#${fieldId}`)! as HTMLElement;
-    const editorOptions: IStandaloneEditorConstructionOptions = {
+    const editorOptions: any = {
       value: value,
       language: options.language || 'html',
       automaticLayout: true,
@@ -42,12 +39,15 @@ const MonacoField = (props: MonacoFieldProps) => {
       folding: options.folding,
       glyphMargin: false,
     };
-    const editor = monaco.editor.create(element, editorOptions);
+
+    const editorInstance = editor.create(element, editorOptions);
     const handleChange = debounce(() => {
-      onChange(name, editor.getValue());
+      onChange(name, editorInstance.getValue());
     }, 500);
 
-    editor.onDidChangeModelContent(handleChange);
+    editorInstance.onDidChangeModelContent(handleChange);
+
+    return editorInstance.dispose;
   }, []);
 
   const height = `${options.height || 300}px`;

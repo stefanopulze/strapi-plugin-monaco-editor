@@ -7,6 +7,6 @@
   "compilerOptions": {
     "rootDir": "../",
     "baseUrl": ".",
-    "target": "ES6"
+    "target": "ESNext"
   }
 }
